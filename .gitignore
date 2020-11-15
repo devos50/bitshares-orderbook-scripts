@@ -1,2 +1,3 @@
 orders.txt
 __pycache__/**
+.idea/**
