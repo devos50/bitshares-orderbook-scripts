@@ -1,3 +1,5 @@
 orders.txt
 __pycache__/**
 .idea/**
+scenarios/**
+.DS_Store
