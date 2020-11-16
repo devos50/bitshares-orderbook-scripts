@@ -18,6 +18,7 @@ with open("orders.txt", "r") as orders_file:
         order = Order.from_line(order_line)
         if order.type == "ask" or order.type == "bid":
             created_orders.add(order.id)
+            orders_parsed += 1
 
         # We should not have cancellations for orders that we did not create
         if order.type == "cancel" and order.id not in created_orders:
@@ -25,7 +26,6 @@ with open("orders.txt", "r") as orders_file:
 
         transactions.append(order)
         users.add(order.user_id)
-        orders_parsed += 1
         if not min_timestamp or order.timestamp < min_timestamp:
             min_timestamp = order.timestamp
 
